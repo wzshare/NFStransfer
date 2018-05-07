@@ -12,6 +12,7 @@
 		BF37F45E20A0581000B60A58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF37F45C20A0581000B60A58 /* Main.storyboard */; };
 		BF37F46020A0581100B60A58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF37F45F20A0581100B60A58 /* Assets.xcassets */; };
 		BF37F46320A0581100B60A58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF37F46120A0581100B60A58 /* LaunchScreen.storyboard */; };
+		BF37F46E20A069B500B60A58 /* FNS-Candy.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BF37F46D20A069B500B60A58 /* FNS-Candy.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		BF37F45F20A0581100B60A58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF37F46220A0581100B60A58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF37F46420A0581100B60A58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF37F46D20A069B500B60A58 /* FNS-Candy.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "FNS-Candy.mlmodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +62,17 @@
 				BF37F45F20A0581100B60A58 /* Assets.xcassets */,
 				BF37F46120A0581100B60A58 /* LaunchScreen.storyboard */,
 				BF37F46420A0581100B60A58 /* Info.plist */,
+				BF37F46C20A069B500B60A58 /* Resources */,
 			);
 			path = NFStransfer;
+			sourceTree = "<group>";
+		};
+		BF37F46C20A069B500B60A58 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BF37F46D20A069B500B60A58 /* FNS-Candy.mlmodel */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF37F46E20A069B500B60A58 /* FNS-Candy.mlmodel in Sources */,
 				BF37F45B20A0581000B60A58 /* ViewController.swift in Sources */,
 				BF37F45920A0581000B60A58 /* AppDelegate.swift in Sources */,
 			);
