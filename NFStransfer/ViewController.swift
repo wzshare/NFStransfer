@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var scene: UIImageView!
     @IBOutlet weak var imageDetail: UILabel!
     
+    var inputImage: UIImage!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,22 +24,24 @@ class ViewController: UIViewController {
             fatalError("no input image.")
         }
         scene.image = image
-        imageDetail.text = "width:\(scene.frame.size.width) height:\(scene.frame.size.height)"
+        inputImage = image
+        imageDetail.text = "width: \(scene.frame.size.width) height: \(scene.frame.size.height)"
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     
-    
+    @IBAction func resetImage(_ sender: Any) {
+        scene.image = inputImage
+    }
 }
 
 extension ViewController {
     
-    @IBAction func runModel(_ sender: Any) {
-        guard let pixelBuffer = scene.image?.pixelBuffer(width: 720, height: 720) else {
+    @IBAction func runCandyModel(_ sender: Any) {
+        guard let pixelBuffer = inputImage?.pixelBuffer(width: 720, height: 720) else {
             return
         }
         
@@ -44,10 +49,42 @@ extension ViewController {
         
         do {
             let ouput = try model.prediction(inputImage: pixelBuffer)
-            NSLog("success")
+            NSLog("candy style success")
             scene.image = UIImage(pixelBuffer: ouput.outputImage)
         } catch {
-            NSLog("fail")
+            NSLog("candy style fail")
+        }
+    }
+    
+    @IBAction func runFeathersModel(_ sender: Any) {
+        guard let pixelBuffer = inputImage?.pixelBuffer(width: 720, height: 720) else {
+            return
+        }
+        
+        let model = FNS_Feathers_1()
+        
+        do {
+            let ouput = try model.prediction(inputImage: pixelBuffer)
+            NSLog("feathers style success")
+            scene.image = UIImage(pixelBuffer: ouput.outputImage)
+        } catch {
+            NSLog("feathers style fail")
+        }
+    }
+    
+    @IBAction func runScreamModel(_ sender: Any) {
+        guard let pixelBuffer = inputImage?.pixelBuffer(width: 720, height: 720) else {
+            return
+        }
+        
+        let model = FNS_The_Scream_1()
+        
+        do {
+            let ouput = try model.prediction(inputImage: pixelBuffer)
+            NSLog("scream style success")
+            scene.image = UIImage(pixelBuffer: ouput.outputImage)
+        } catch {
+            NSLog("scream style fail")
         }
     }
 }

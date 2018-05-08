@@ -14,6 +14,8 @@
 		BF37F46320A0581100B60A58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF37F46120A0581100B60A58 /* LaunchScreen.storyboard */; };
 		BF37F46E20A069B500B60A58 /* FNS_Candy_1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BF37F46D20A069B500B60A58 /* FNS_Candy_1.mlmodel */; };
 		BF37F47020A1856D00B60A58 /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37F46F20A1856D00B60A58 /* UIImage+CVPixelBuffer.swift */; };
+		BF37F47320A197A100B60A58 /* FNS_Feathers_1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BF37F47120A197A100B60A58 /* FNS_Feathers_1.mlmodel */; };
+		BF37F47420A197A100B60A58 /* FNS_The_Scream_1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BF37F47220A197A100B60A58 /* FNS_The_Scream_1.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		BF37F46420A0581100B60A58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF37F46D20A069B500B60A58 /* FNS_Candy_1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FNS_Candy_1.mlmodel; sourceTree = "<group>"; };
 		BF37F46F20A1856D00B60A58 /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
+		BF37F47120A197A100B60A58 /* FNS_Feathers_1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FNS_Feathers_1.mlmodel; sourceTree = "<group>"; };
+		BF37F47220A197A100B60A58 /* FNS_The_Scream_1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FNS_The_Scream_1.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 		BF37F46C20A069B500B60A58 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF37F47120A197A100B60A58 /* FNS_Feathers_1.mlmodel */,
+				BF37F47220A197A100B60A58 /* FNS_The_Scream_1.mlmodel */,
 				BF37F46D20A069B500B60A58 /* FNS_Candy_1.mlmodel */,
 			);
 			path = Resources;
@@ -150,7 +156,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF37F46E20A069B500B60A58 /* FNS_Candy_1.mlmodel in Sources */,
+				BF37F47320A197A100B60A58 /* FNS_Feathers_1.mlmodel in Sources */,
 				BF37F45B20A0581000B60A58 /* ViewController.swift in Sources */,
+				BF37F47420A197A100B60A58 /* FNS_The_Scream_1.mlmodel in Sources */,
 				BF37F45920A0581000B60A58 /* AppDelegate.swift in Sources */,
 				BF37F47020A1856D00B60A58 /* UIImage+CVPixelBuffer.swift in Sources */,
 			);
