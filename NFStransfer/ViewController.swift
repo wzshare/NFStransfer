@@ -10,9 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var scene: UIImageView!
+    @IBOutlet weak var imageDetail: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        guard let image = UIImage(named: "bruno") else {
+            fatalError("no input image.")
+        }
+        scene.image = image
+        imageDetail.text = "width:\(scene.frame.size.width) height:\(scene.frame.size.height)"
     }
 
     override func didReceiveMemoryWarning() {
