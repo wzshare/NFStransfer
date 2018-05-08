@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreML
 
 class ViewController: UIViewController {
 
@@ -28,6 +29,26 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    
+}
 
+extension ViewController {
+    
+    @IBAction func runModel(_ sender: Any) {
+        guard let pixelBuffer = scene.image?.pixelBuffer(width: 720, height: 720) else {
+            return
+        }
+        
+        let model = FNS_Candy_1()
+        
+        do {
+            let ouput = try model.prediction(inputImage: pixelBuffer)
+            NSLog("success")
+            scene.image = UIImage(pixelBuffer: ouput.outputImage)
+        } catch {
+            NSLog("fail")
+        }
+    }
 }
 
