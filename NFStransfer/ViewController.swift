@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let image = UIImage(named: "daria") else {
+        guard let image = UIImage(named: "rowan") else {
             fatalError("no input image.")
         }
         scene.image = image
