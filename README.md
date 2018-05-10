@@ -11,9 +11,14 @@ Model is from [Convert Torch7 models into Apple CoreML forma](https://github.com
 
 # Transfer Image
 
-![candy](daria_candy.jpg)
-![la muse](daria_lamuse.jpg)
-![feathers](daria_feathers.jpg)
-![udnie](daria_udnie.jpg)
-![scream](daria_scream.jpg)
-![mosaic](daria_mosaic.jpg)
+|candy style |la muse style|
+|:---|:---|
+|![candy](daria_candy.jpg)|![la muse](daria_lamuse.jpg)|
+
+|feathers style|udnie style|
+|:---|:---|
+|![feathers](daria_feathers.jpg)|![udnie](daria_udnie.jpg)|
+
+|scream style|mosaic style|
+|:---|:---|
+|![scream](daria_scream.jpg)|![mosaic](daria_mosaic.jpg)|
