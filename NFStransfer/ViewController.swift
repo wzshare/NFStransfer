@@ -22,7 +22,6 @@ enum ModelStyle {
 class ViewController: UIViewController {
 
     @IBOutlet weak var scene: UIImageView!
-    @IBOutlet weak var imageDetail: UILabel!
     
     var inputImage: UIImage!
     
@@ -34,7 +33,6 @@ class ViewController: UIViewController {
         }
         scene.image = image
         inputImage = image
-        imageDetail.text = "width: \(inputImage.size.width)\nheight: \(inputImage.size.height)"
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +61,26 @@ class ViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
+    }
+    
+    @IBAction func cameraAction(_ sender: Any) {
+        let imagePickerController = UIImagePickerController()
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            imagePickerController.sourceType = .camera
+        }
+        imagePickerController.delegate = self
+//        imagePickerController.allowsEditing = true
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    @IBAction func albumAction(_ sender: Any) {
+        let imagePickerController = UIImagePickerController()
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) {
+            imagePickerController.sourceType = .savedPhotosAlbum
+        }
+        imagePickerController.delegate = self
+//        imagePickerController.allowsEditing = true
+        present(imagePickerController, animated: true, completion: nil)
     }
 }
 
@@ -176,6 +194,22 @@ extension ViewController {
         } catch {
             NSLog("mosaic style fail")
         }
+    }
+}
+
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate
+{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        guard let image = info[UIImagePickerControllerOriginalImage] else {
+            return
+        }
+        scene.image = image as? UIImage
+        inputImage = image as! UIImage
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
 }
 
