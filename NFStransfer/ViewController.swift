@@ -45,10 +45,17 @@ class ViewController: UIViewController {
         scene.image = inputImage
     }
     
-
 }
 
 extension ViewController {
+    
+    func resizeImage(image: UIImage, size: CGSize) -> UIImage {
+        UIGraphicsBeginImageContext(size)
+        image.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        let reImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return reImage!
+    }
     
     @IBAction func runCandyModel(_ sender: Any) {
         guard let pixelBuffer = inputImage?.pixelBuffer(width: 720, height: 720) else {
@@ -60,7 +67,8 @@ extension ViewController {
         do {
             let ouput = try model.prediction(inputImage: pixelBuffer)
             NSLog("candy style success")
-            scene.image = UIImage(pixelBuffer: ouput.outputImage)
+            let img = UIImage(pixelBuffer: ouput.outputImage)
+            scene.image = resizeImage(image: img!, size: inputImage.size)
         } catch {
             NSLog("candy style fail")
         }
@@ -76,7 +84,8 @@ extension ViewController {
         do {
             let ouput = try model.prediction(inputImage: pixelBuffer)
             NSLog("feathers style success")
-            scene.image = UIImage(pixelBuffer: ouput.outputImage)
+            let img = UIImage(pixelBuffer: ouput.outputImage)
+            scene.image = resizeImage(image: img!, size: inputImage.size)
         } catch {
             NSLog("feathers style fail")
         }
@@ -92,7 +101,8 @@ extension ViewController {
         do {
             let ouput = try model.prediction(inputImage: pixelBuffer)
             NSLog("scream style success")
-            scene.image = UIImage(pixelBuffer: ouput.outputImage)
+            let img = UIImage(pixelBuffer: ouput.outputImage)
+            scene.image = resizeImage(image: img!, size: inputImage.size)
         } catch {
             NSLog("scream style fail")
         }
@@ -108,7 +118,8 @@ extension ViewController {
         do {
             let ouput = try model.prediction(inputImage: pixelBuffer)
             NSLog("la muse style success")
-            scene.image = UIImage(pixelBuffer: ouput.outputImage)
+            let img = UIImage(pixelBuffer: ouput.outputImage)
+            scene.image = resizeImage(image: img!, size: inputImage.size)
         } catch {
             NSLog("la muse style fail")
         }
@@ -124,7 +135,8 @@ extension ViewController {
         do {
             let ouput = try model.prediction(inputImage: pixelBuffer)
             NSLog("udnie style success")
-            scene.image = UIImage(pixelBuffer: ouput.outputImage)
+            let img = UIImage(pixelBuffer: ouput.outputImage)
+            scene.image = resizeImage(image: img!, size: inputImage.size)
         } catch {
             NSLog("udnie style fail")
         }
@@ -140,11 +152,11 @@ extension ViewController {
         do {
             let ouput = try model.prediction(inputImage: pixelBuffer)
             NSLog("mosaic style success")
-            scene.image = UIImage(pixelBuffer: ouput.outputImage)
+            let img = UIImage(pixelBuffer: ouput.outputImage)
+            scene.image = resizeImage(image: img!, size: inputImage.size)
         } catch {
             NSLog("mosaic style fail")
         }
     }
-    
 }
 
