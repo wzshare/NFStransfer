@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,31 +29,41 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJU-Eu-J1H">
-                                <rect key="frame" x="27.5" y="460" width="325" height="48"/>
+                                <rect key="frame" x="27.5" y="460" width="150" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="0.79970637580000004" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Run Candy Style"/>
+                                <state key="normal" title="Candy"/>
                                 <connections>
                                     <action selector="runCandyModel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="omG-ie-26Y"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SuR-V0-PbH">
-                                <rect key="frame" x="27.5" y="530" width="325" height="48"/>
+                                <rect key="frame" x="27.5" y="530" width="150" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="0.79970637580000004" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Run Feathers Style"/>
+                                <state key="normal" title="Feathers"/>
                                 <connections>
                                     <action selector="runFeathersModel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="glG-kF-mUg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZE-Th-8yt">
-                                <rect key="frame" x="27.5" y="600" width="325" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYY-av-zN3">
+                                <rect key="frame" x="200" y="530" width="150" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="0.79970637580000004" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Run Scream Style"/>
+                                <state key="normal" title="Udnie"/>
+                                <connections>
+                                    <action selector="runUdnieModel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9IZ-6w-fcx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZE-Th-8yt">
+                                <rect key="frame" x="27.5" y="600" width="150" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="0.79970637580000004" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Scream"/>
                                 <connections>
                                     <action selector="runScreamModel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b5p-N9-jQz"/>
                                 </connections>
@@ -75,6 +84,26 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="resetImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Lx-Eu-ctV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAT-ad-fyc">
+                                <rect key="frame" x="200" y="460" width="150" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="0.79970637580000004" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="La Muse"/>
+                                <connections>
+                                    <action selector="runLaMuseModel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s1A-6l-Bsx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHG-8w-IwV">
+                                <rect key="frame" x="200" y="600" width="150" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="0.79970637580000004" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Mosaic"/>
+                                <connections>
+                                    <action selector="runMosaicModel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OxD-B2-mb2"/>
                                 </connections>
                             </button>
                         </subviews>

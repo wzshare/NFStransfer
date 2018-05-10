@@ -9,13 +9,21 @@
 import UIKit
 import CoreML
 
+enum ModelStyle {
+    case LaMuse
+    case Mosaic
+    case Udnie
+    case Feathers
+    case Scream
+    case Candy
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var scene: UIImageView!
     @IBOutlet weak var imageDetail: UILabel!
     
     var inputImage: UIImage!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +44,8 @@ class ViewController: UIViewController {
     @IBAction func resetImage(_ sender: Any) {
         scene.image = inputImage
     }
+    
+
 }
 
 extension ViewController {
@@ -45,7 +55,7 @@ extension ViewController {
             return
         }
         
-        let model = FNS_Candy_1()
+        let model = FNS_Candy()
         
         do {
             let ouput = try model.prediction(inputImage: pixelBuffer)
@@ -61,7 +71,7 @@ extension ViewController {
             return
         }
         
-        let model = FNS_Feathers_1()
+        let model = FNS_Feathers()
         
         do {
             let ouput = try model.prediction(inputImage: pixelBuffer)
@@ -77,7 +87,7 @@ extension ViewController {
             return
         }
         
-        let model = FNS_The_Scream_1()
+        let model = FNS_The_Scream()
         
         do {
             let ouput = try model.prediction(inputImage: pixelBuffer)
@@ -87,5 +97,54 @@ extension ViewController {
             NSLog("scream style fail")
         }
     }
+    
+    @IBAction func runLaMuseModel(_ sender: Any) {
+        guard let pixelBuffer = inputImage?.pixelBuffer(width: 720, height: 720) else {
+            return
+        }
+        
+        let model = FNS_La_Muse()
+        
+        do {
+            let ouput = try model.prediction(inputImage: pixelBuffer)
+            NSLog("la muse style success")
+            scene.image = UIImage(pixelBuffer: ouput.outputImage)
+        } catch {
+            NSLog("la muse style fail")
+        }
+    }
+    
+    @IBAction func runUdnieModel(_ sender: Any) {
+        guard let pixelBuffer = inputImage?.pixelBuffer(width: 720, height: 720) else {
+            return
+        }
+        
+        let model = FNS_Udnie()
+        
+        do {
+            let ouput = try model.prediction(inputImage: pixelBuffer)
+            NSLog("udnie style success")
+            scene.image = UIImage(pixelBuffer: ouput.outputImage)
+        } catch {
+            NSLog("udnie style fail")
+        }
+    }
+    
+    @IBAction func runMosaicModel(_ sender: Any) {
+        guard let pixelBuffer = inputImage?.pixelBuffer(width: 720, height: 720) else {
+            return
+        }
+        
+        let model = FNS_Mosaic()
+        
+        do {
+            let ouput = try model.prediction(inputImage: pixelBuffer)
+            NSLog("mosaic style success")
+            scene.image = UIImage(pixelBuffer: ouput.outputImage)
+        } catch {
+            NSLog("mosaic style fail")
+        }
+    }
+    
 }
 
