@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreML
+import Photos
 
 enum ModelStyle {
     case LaMuse
@@ -28,12 +29,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let image = UIImage(named: "rowan") else {
+        guard let image = UIImage(named: "daria") else {
             fatalError("no input image.")
         }
         scene.image = image
         inputImage = image
-        imageDetail.text = "width: \(scene.frame.size.width) height: \(scene.frame.size.height)"
+        imageDetail.text = "width: \(inputImage.size.width)\nheight: \(inputImage.size.height)"
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +46,24 @@ class ViewController: UIViewController {
         scene.image = inputImage
     }
     
+    @IBAction func saveImage(_ sender: Any) {
+        let image = scene.image!
+        PHPhotoLibrary.shared().performChanges({
+            PHAssetChangeRequest.creationRequestForAsset(from: image)
+        }) { (isSuccess: Bool, error: Error?) in
+            if isSuccess {
+                NSLog("save success")
+                let alert = UIAlertController(title: "", message: "save success", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            } else{
+                NSLog("save fail")
+                let alert = UIAlertController(title: "", message: "save fail", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
 }
 
 extension ViewController {
